@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>米途家长端图片清单 · V3 + V4</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, 'Microsoft YaHei', sans-serif; background: #f5f5f0; color: #333; padding: 24px; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  .subtitle { font-size: 13px; color: #999; margin-bottom: 28px; }
+  .version-header { font-size: 18px; font-weight: 700; margin: 32px 0 16px; padding: 12px 16px; border-radius: 10px; }
+  .version-header.v3 { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #92400e; }
+  .version-header.v4 { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #3730a3; }
+  .section { margin-bottom: 28px; }
+  .section h2 { font-size: 14px; color: #888; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; padding-left: 4px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: box-shadow 0.2s; }
+  .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .card img { width: 100%; height: 180px; object-fit: cover; display: block; background: #f0eee8; }
+  .card .info { padding: 12px 16px; }
+  .card .label { font-size: 13px; font-weight: 600; color: #333; }
+  .card .usage { font-size: 11px; color: #999; margin-top: 4px; line-height: 1.5; }
+  .card .url { font-size: 10px; color: #bbb; margin-top: 6px; word-break: break-all; line-height: 1.4; font-family: 'SF Mono', 'Fira Code', monospace; }
+  .local { border: 2px solid #FFB800; }
+  .summary-table { font-size: 13px; border-collapse: collapse; width: 100%; max-width: 600px; margin-top: 8px; }
+  .summary-table td { padding: 10px 0; }
+  .summary-table tr { border-bottom: 1px solid #eee; }
+  .summary-table tr:last-child { border-bottom: none; }
+  .summary-table .label-col { color: #999; width: 140px; }
+  .summary-table .value-col { font-weight: 600; }
+  .summary-table .total-row .label-col { color: #333; font-weight: 600; }
+  .summary-table .total-row .value-col { color: #92400e; font-size: 15px; }
+  .badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 6px; margin-right: 4px; }
+  .badge-page { background: #fef3c7; color: #92400e; }
+</style>
+</head>
+<body>
+
+<h1>米途家长端 · 图片资源清单</h1>
+<p class="subtitle">V3 家长端 + V4 家长端 · 去重后汇总</p>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--              V3 家长端                      -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="version-header v3">🟠 V3 家长端</div>
+
+<!-- Square 广场页 -->
+<div class="section">
+  <h2>Square 广场页 · 轮播 Banner</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1qvaGrgAfNSiX8yJ-6meXvJ8676IIpZlaFJL_9k2Qc_21E-A1JFkwBw_DnpH4qoe2TgNHP8FUGEd4novbCbbOIpfaM8mS3DQ_qdOgTVnJJ09DINeAzHucAB0XC2sGHnKWK3FPTRNFtTuefGsMlUczJsrXMz2gBh5YO9FGk-aPP0bPYIX6ItSgx4IaZSx8grk9rlFu06MnCFJq91o-Cp4FceTLOZlUmr3UiQdBgpwTKX5FiLPo7on-cZ7ra5e9d-hDTu-ZJktiG1M" alt="Banner 1 - 品牌宣传">
+      <div class="info">
+        <div class="label">Banner 1 — 品牌宣传「路还长，慢慢走」</div>
+        <div class="usage"><span class="badge badge-page">Square</span> HeroBanner 轮播第1帧</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRtTVQkv29rgaL5Litnin_DxdWAEpAP8vpz6JlSsDYusk0pbRN-HZEE80v_6lzwLaGMUAMRUdV01XmxvhG1qgOCA2XsnE9cYnTe5pYxm3Tjw1gYon1nnaAexS5bnPFP-zfuFx8TfHGj69m_yWEy_XrqlBrib9vlveS5dq9PS04hGOnGU_06E-TKgGs3AMjVloWy1RTcXoWoFgbjEZDX9YVmjFQSWxxY3_ARv-dDvkRUc3LHBBuUAhDCfEcbprVpKUZcOboC6ysT9w" alt="Banner 2 - 入校支持">
+      <div class="info">
+        <div class="label">Banner 2 — 入校支持「影子老师全天陪伴」</div>
+        <div class="usage"><span class="badge badge-page">Square</span> HeroBanner 轮播第2帧 · <span class="badge badge-page">Square</span> orgCovers[2] 机构封面</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_CgBjgmeA98HX7ViMCTc6lnSaBroaniAI5GXxL_tLVmACLR4qHuIjSy2yrtcEwovwF99HmVBWSOUyNhazJsIisGY62lqCvyVA7miSD3FZafIYga-p1irMQFAFPQ5asOqeICNLuwxLe6H_PLFSZDvABb49LR_-3woSN-B9CLvJAMYmgmoqGIxIRYieApcnFlavGPEBpJkAXE-dmT0ENW6LTGPqdVWqzFwrS4w4n5ZgOC0PeZT2T__hKO0Ja7LXN9W8ajzZknSo7_s" alt="Banner 3 - 入户干预">
+      <div class="info">
+        <div class="label">Banner 3 — 入户干预「家庭环境专业训练」</div>
+        <div class="usage"><span class="badge badge-page">Square</span> HeroBanner 轮播第3帧 · <span class="badge badge-page">Square</span> orgCovers[1] 机构封面</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Square 老师头像 -->
+<div class="section">
+  <h2>Square 广场页 · 推荐老师头像</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCXqOeF_ZJgfqHqRRyusp_0QwDp058tnTNMvQP0iBEbTtUB03Q25HuccRXc06w-O2m8Qg7HHjiYDM_VwsFe3mIC9rtIBAtzS-cP9haTNLaMpPh4mTvMoBNaWx2PiQVksd0OxzDBGqL_cjVWjr10_al3NWy91FTQ_sy-Xrt5ZAjWrTQJ26itePPyKrOiiI96M-hO0qzCxIkjplc5X1TAm0aqddV8j7xCk0VYn2rl_z0ytgC-YX5g2Px_hzbn2FO7agSKgQxdcK6Spc" alt="老师头像1">
+      <div class="info">
+        <div class="label">推荐老师头像 1</div>
+        <div class="usage"><span class="badge badge-page">Square</span> teacherAvatars[1]</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIFDr3n7x3-JM3VdjpfpLNbCpJe7OvZmo1t8Cv49919mkzY-ABI3vipWCN17KNZALqVmk6kT930Nmw6PNuJgCXDPUCvqNS89-AyCp6TpOnsm2JghAOctd0RKB9J08qST-2ffKrSU9dJE2GgoXUnlByU2zjWgoQg5_ZNGrBBKhsFskuCYaoewY-8PLG_muVMhlnE6Sh3Bzk_w5n6zjvDW7aZihfpAFQxX4RJwNogiJDWOFV5oWwOMAistWRfeKN3lm9Rk3ROgSiZTM" alt="老师头像2">
+      <div class="info">
+        <div class="label">推荐老师头像 2</div>
+        <div class="usage"><span class="badge badge-page">Square</span> teacherAvatars[2]</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtzZ5VfShRdSHuiZS3DTAQUPW3Sg_6NKFGjYRkvmeCqo8jNrarqIGy1pxSap3K45-d7yFcYzV3NbTKMWb3a0wUB2Xu_7dJzrjLLR8HXcw2OdtjpzQHrKSC6CU4d-FCCvG5S4K4h9NdWSqRRxeaZk3rC3fmH7vmeg4NeM3l-njeN7yeMYTxd5urF--92lyEM60188_bgoINHNSr9UWV1YzHt_Li-M5QjZQx-coOLJ2Hih66sjXi4ENC2xEqLIL88ves3voL8lCbJfM" alt="老师头像3">
+      <div class="info">
+        <div class="label">推荐老师头像 3</div>
+        <div class="usage"><span class="badge badge-page">Square</span> teacherAvatars[3]</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OrgList 机构列表 -->
+<div class="section">
+  <h2>OrgList 机构列表页</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1wTufmcdpJMw_Q8af9p8dkRyAWxkg67yA9vjfuLvNckv_xTGfynyX9GsnZiPmMZbl1L8Lr5FGx6Kk8EC3VizUKPe_RB-Sx6Xzblj7pbLlLXJ4pikrMCuI32fqJq-3nJCvNebJN-7-Smy7i1i17q-Y2xcQdsBgbexCLMjkxEt1RTBzqu6ewLGAlzFgMBzaOhAR-oXB1T6JXQLPgLYQSXc4wLMack3Z1K_ReOjXMGZeXtotm3Zfba-cmyQeAWFDtU-Ki0gqc9j5TwM" alt="大米和小米（朝阳店）封面">
+      <div class="info">
+        <div class="label">机构封面 — 大米和小米（朝阳店）</div>
+        <div class="usage"><span class="badge badge-page">OrgList</span> 机构卡片1封面</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgxgVoUEFpjDsHXAdfyPpDY9t0vYcpHVos73LYrbJF5jjXTRYj7pwZKiLjCXhlds7mRVEHY1n-R9wNgI8YseY4nnN1RDtw4vrRof-B_2dNWZyL7wSyV-gnKf3j5kFr_8kvzOva37cTnyREpM6y2TI6FIjiR8vX4dGqIGIc0lGNWHzb4BiAE_JuFQHfmhNaG5XBLDKpQwY1xXdo8ePmFRSzTa-1Uq4pkEIn9xn2VRFf823J6go0RKO3GzoXrCyL006FW4saw2FFDc0" alt="小森林支持性小屋封面">
+      <div class="info">
+        <div class="label">机构封面 — 小森林支持性小屋</div>
+        <div class="usage"><span class="badge badge-page">OrgList</span> 机构卡片2封面</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY-_dsoqx8z0RHmUTpEzMMMBzQpBSOZMpF2sVPLaB8Pk9eytbVjNW5M3Cs8txEwgEN6bB-jthzGJHJZZq7h95I5Y89Tr6CnoHnWxlY8jHvGUDYdOjE1VJNKlRYc_EWKwc51B5tumKorNqKL_IFaHtFgzFBr6BrUtnGkhspTVPJjndvqFGV3atPs0kJufYvI-Qbi6wI5gayLjOZzwI7QHwLaOGSzaJ8bQAjK4srFZM2kLnPOj8jC7f_TgNpSjnotRjc1UErSXSX3Rw" alt="康复师头像 - 张老师">
+      <div class="info">
+        <div class="label">康复师头像 — 张老师</div>
+        <div class="usage"><span class="badge badge-page">OrgList</span> 康复师卡片1头像</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNf_7ihahuo5GXyijkg_g1db0T9_Lgbx3mmuOcPlg5b9j1vsqdk4i4pDxXMsheXEdlOFMmPLkFAIumMXTyDiiguhG36nKYZJ2cAOxBRPAJbnKUh3cF3arSLo0rXadsM61l2Cru-0q5R7evtmLucLadP0od5EqyQS3Q_5xNNZYb90kLA2nZQ2x-Iz_Rgjl_-Mp3HzT1YnZ5WzeRk4N5Avx3_PnY4Lv-N1owIme2oZGJdpcIpQHfI3Y0-XGWxSJqkChUpcktbQvhQ9M" alt="康复师头像 - 王老师">
+      <div class="info">
+        <div class="label">康复师头像 — 王老师</div>
+        <div class="usage"><span class="badge badge-page">OrgList</span> 康复师卡片2头像</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEUrhP5ENbDdAmOT7r-71bHAqMCs-Did10OSjLid4Tcxs_NZ2RkYyrnXL3-SiLFs5kbefS9gg6DmjWQyfE52rKYr1LoT1pGGDRvOfrbimUxra38W_cctG9-KvnLxlDbfzQTfYxkNyjL9Hm833qJxtVKXptn6lNHSnGsz4N1q96UnHyFnph-S1F-041RkoNp4HhTg159bdR51nGhGkd7KDNW5iNz96WgdOJc9lLUvvEz9x_DzYvCONXxzFTqNC60xl2F8d5zZ0uY3I" alt="地平线强化干预中心封面">
+      <div class="info">
+        <div class="label">机构封面 — 地平线强化干预中心</div>
+        <div class="usage"><span class="badge badge-page">OrgList</span> 机构卡片3封面</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OrgDetail 机构详情 -->
+<div class="section">
+  <h2>OrgDetail 机构详情页</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXMwQXizadLEKtBuWh6zXBGX4KViiMcHNrga4RK3tVh4NagClLAFxHIaZC4IDbDfT0b4uxokBCY3BMLs_IR8jZE7osdPMUnKdKmbcxWeRDQVF4n8F1IxVvUIItoUKqc3is0Um-6y0v1A4NLaxNoHNogYTzC31cl7rzHhl-gWxjyKrZQ2HZbKceyWU82OynrkQlBeVZChis375uFsWegUDiH5-BSNESs01JrcAxDg1Z1jnOs_ahH0ZZ-cqtyqh7qvStrkJNYwSxlkg" alt="机构内景 Hero">
+      <div class="info">
+        <div class="label">机构内景 Hero 图</div>
+        <div class="usage"><span class="badge badge-page">OrgDetail</span> Hero 区域 · <span class="badge badge-page">TeacherDetail</span> 所属机构 Logo</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC81YEYerk_LEnP8ZP-ZUWeyL8rgYnFIBp-toL5GdhQm4hhTuNQqTBp4GQKSkOWj3U0mNz2FKGcVWx1z7dd7fB0vXRBCOZpcIc3KZsDOucKyJo-7e7AbNytMc5f9W44LFhpA-ojSW73WType5p8rt4wRx1xHQlDFPa-3GuX0Xj3N8A23qdPo0qBc231EDc5B-veBvuY34t3gi673A-RzRyE6C-PDQ4yPUZJpxWTVksfBclX7X2ytkd4uvw8uPqOCj_vT_xkQENurS8" alt="环境展示1">
+      <div class="info">
+        <div class="label">环境展示 1</div>
+        <div class="usage"><span class="badge badge-page">OrgDetail</span> 环境展示横滑图1</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDe9w1wxsoxvUg5Wb0q3QZTx0s9EFGo9U_yNa3yUA0_dPYyRqlJwDBT3XbUOOkGVwI1J0EjEHGy1F6LMqpkOnNmYO2ck-0D7aBRRaYyGFsbSDyK9I2nrs-pwqdD89VKktvAERCbKRopEZpD5SuB_iC2jMvwG66MCqCP0TTUk6Qvr54avX46CMawZxx326AEJbQiFEK6MqCPjI8pQh5JVf-558Gv9dDh7bSAePe_geuaW_RSpQdLsy5dLL6AK121UUjvk3watmloVA" alt="环境展示2">
+      <div class="info">
+        <div class="label">环境展示 2</div>
+        <div class="usage"><span class="badge badge-page">OrgDetail</span> 环境展示横滑图2</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoqmDPmebYUNTk-Oj3rNEbR7R_-rQiDTxAqGdkq65h_jzKbDoxYmGMFzKeU7A68D-mzCBZq-HYQBn1raj1kZMd405ICFxzq8kM2sqjLg_RSz1TmuYMgyPKwJOph49ETlLFuliVx1Jh89Xv8oltYpB7qtgG-Xfl1hPsjcM7rpv9s8XX9qXxPKX-4nz1Y65I89YVK15GphQ84l_PaIX_Sact6Fx0FLhdnrtTglZWX1mi93U7WPo8XAY1ngUBYtFMTVFCDpLr05F-nHY" alt="环境展示3">
+      <div class="info">
+        <div class="label">环境展示 3</div>
+        <div class="usage"><span class="badge badge-page">OrgDetail</span> 环境展示横滑图3</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN_E7O5sQ6q-N0Hex3L-zrs7sSxQOtiFULM6lhpwVpEicSlLHjKZdJIynSEjauOSX2IFqVhb1WZx3Cg8KmbAB2Lahh147SFmWG5y_fqVM_FUDxG5wS_VVqbGk67BNC16AhaUYmbVpSERAMTSss-qsXKLUw2CimULLYBsfgLwOCvWVq7x81MLIlItFFjIFjFXYfu1OyjD6XVirz1mKGgbZos6IgbvN0sYyj49JrGSVborfi9oySied4VSjX5dShl-fwFHPqKDjRjGg" alt="机构位置地图">
+      <div class="info">
+        <div class="label">机构位置地图</div>
+        <div class="usage"><span class="badge badge-page">OrgDetail</span> 机构位置区域地图底图</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ProductDetail 产品详情 -->
+<div class="section">
+  <h2>ProductDetail 产品详情页</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsG13FKQkIuKcy0Hk7MMj28NshmRRQy-ryUVd-Y6iAiGP0mHOPWhSOPRXEzihPuiGZoyK7RdrtRGurq5uvCXFJBaJlFtawwByiiB2okyPDULS5xSu2230vSSv6H1NBQ_JpEatrRm9pS2z_7lmkQYJPZpgq7CpvNiAFC8dzw_9cfK9Uq21I98qMxGUaYBRYEohWsGg6H4Cg_RMfeYpqF9O0DU4yEZximfoT1pmbYn1rtgZC219bL9d9zFMw1LQ5afSiP8_FIkG6zMQ" alt="Classroom Environment">
+      <div class="info">
+        <div class="label">课堂环境 Hero 图</div>
+        <div class="usage"><span class="badge badge-page">ProductDetail</span> Hero 区域「影子老师入校陪读」</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TeacherDetail 老师详情 -->
+<div class="section">
+  <h2>TeacherDetail 老师详情页</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB66T4G8GlDi_KbfaUWHoXXphR1jz8ek5ElrVZWeqxBvviduhQbNan3fIYbd32xYIGGGFu6-m2YNqeGJQlp-YJx9CN7DQXuSTZiHBgTH-HbHeg2XVpiSEqV5KfYzP_Ia4X0c6EGBp0hS5TR_hs4xzj4PXn2ivhkqsqxJ_lvfMiTDehK--ZWFcIf6DvKUf1axj7Tkz6h9RjCN3CSF1HUCdKU1IiHfJBeKpZFZ_JmMY9MWvNifP9UOI2_vV_rFMnJeSCr5Ky5p3EuCGI" alt="Teacher Profile">
+      <div class="info">
+        <div class="label">张老师 — 个人头像</div>
+        <div class="usage"><span class="badge badge-page">TeacherDetail</span> Hero 区域头像</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcTfXSnQm8YrzCELuewIjsHZf_c1-a35SsANwEgrCXimYXIpCByU2DqfFscVMEIZ2gPLP1zbJ3_gN-WBhypRcMbn-eYEy2afNNU9wNMuYqOvdUzNDyV0dONHb5eWkbQcif60_6RXq0y0sYKAg96QNveRjRm5S7q0HzMkmemSfwBnwgbhZKC8K8eLiwWj2v71AQzisv3DuAb7CvLEXSxd0ZMC8nUNNbzktTcOXEPcnwofvVw_kJn9lbtVIv56JFgbEdFVJsqz8Xnao" alt="Case Image">
+      <div class="info">
+        <div class="label">服务案例配图</div>
+        <div class="usage"><span class="badge badge-page">TeacherDetail</span> 服务案例「成长同途」配图</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ServiceReport 服务报告 -->
+<div class="section">
+  <h2>ServiceReport 服务报告页</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVWF4IXGgQwBwIj3XVUos9ry7PE-kKIiMHpDp5LtEMii0H2WiB_U1Fr6P6mFeyT9-bM0sbDFMSMcgZUxuspDW6QDIYcBehbi-CFChhUSJIkg9tRwTcPvwcXVomAJBdnHrtcPY4LNBv63RlCUnSIDXXNS_oCwx7h-aaQiqyUqu9QN_iKUddxMtnxKQywgLbVOOvIcjelb6jrDhqhSsnCwgbuV2aeE1K22XOGH3xGtjm0GWDPNoGqHunu3vVaI6tJjqWuJCxdH-Ts7M" alt="感官整合训练">
+      <div class="info">
+        <div class="label">课堂附件 — 感官整合训练</div>
+        <div class="usage"><span class="badge badge-page">ServiceReport</span> Bento 图库主图（左大图）</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0ChH75jog-k24LfgD6XiVlcrVZF-NWoK9dynMijjW9dFjcBPeL1OtyvzVrck6gZOX8JnMLqPJryQoBd8RwHcljEdUgxcAc6-Nn1cwjVR-n4yCL6lXwn2wuX-ph30nmtSeaEoVhraGGkJt8aDR_EcHcD3XBQYaC0cWdUEd5SOjNc0vHy18nR68V5shPqo7Th5bo1J8kqlMqCSeouddcZApmtJgc9Z2F54sO1I6mpkdUde8dlibe5YisKBBQlx3tFkRhmfzP-HubmE" alt="拼图训练">
+      <div class="info">
+        <div class="label">课堂附件 — 拼图训练</div>
+        <div class="usage"><span class="badge badge-page">ServiceReport</span> Bento 图库右上</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFEKLQeznQr7Cv16ViaGO5q57GWKQUdxB46q6Pj_u0tVDaOYHofrahkvzYDQloNrlhykV4d4v9WBlr3tZy_ZAtwKRnj78ro7BtSj99-0mUx0SMbIKv14tMTh9AOstEyRTY7TA8Kp0OQ_dxekVqwtLDeANyO9BNY9lEpwtgspuDs-8QeHvFovu_r_kpGUV0c9MFBr1op4RNFheKFqtkdB_jwmraIFK0urJKdt5aO6B5Y9MCVU-DTPkYgHrXr5l5Zb13QXfcYgoDwzI" alt="互动视频">
+      <div class="info">
+        <div class="label">课堂附件 — 互动视频</div>
+        <div class="usage"><span class="badge badge-page">ServiceReport</span> Bento 图库右下（带播放按钮）</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Profile 个人中心 -->
+<div class="section">
+  <h2>Profile 个人中心页</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhw4E36w6yJrY8pNtNiJHrCgmTDeTuCy7KGemxJ6vaS0QlxATnUdhkwBzJEacroP_yq_nhCKboQ3ou5cRhNOrZgGSMM3GXJ4sueWOafzZA2Id1l9MSxaQ6mDkQMcbyoKFbac3z3FJ084yGzeNWtu9voq2ilXKf4xmQJFAQ-EEvP7zRAGnwQsI8cBQT8xd9oPWZMO0Y3b2Bcprv8SjpnsMNzG4j069D5GdNZ0jg3nFUpzu8MnmELkMz0BhnXLkqErcbppuh0hGqUtM" alt="家长头像">
+      <div class="info">
+        <div class="label">家长头像 — 小明妈妈</div>
+        <div class="usage"><span class="badge badge-page">Profile</span> 用户信息区头像</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ChildProfile 孩子档案 -->
+<div class="section">
+  <h2>ChildProfile 孩子档案页</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqkSil-Nj36yo0SEsU4h6yS3uJkBNpxChAdvGCrknC1k4l96HhQRwn9qfkaoi7_R485k9iRXwgtGsUJwHx59xK3hULvrc_EV84cMlHG9nRy-mnsLZZQGw1fnbLbxbDQfCBPBJ05UeXJPRDys-Hm9TtApi4D0OR44S0KJOm042v_Pd6Wv8KMh_1rtiyEfws8buG_ycoQE9wA7hpVjOUUG9i8MsI_HPxnHJ8wMxTNqPlZN5ol9d-80lzhHTJ5DsZXyD1ZcB__Eb6ZMw" alt="小明头像">
+      <div class="info">
+        <div class="label">孩子头像 — 小明</div>
+        <div class="usage"><span class="badge badge-page">ChildProfile</span> 孩子卡片1头像</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUBoTmEPvUEYhXhbV_CGFjCwgXyeZ2MQS19pOi8L4FuMsjk8wBmX8_ELPOz43FFvWO5JTY42yqBrjKrI9UHDpLR_5MFkckiq6SNcOYUlZCBfd3-mNf0zK9Ovu68O4Q1NxUXy50XNU4aJ6U2PDc5FFG25fYML9Mg7cb14akdhh_EG7uLc9Mm0Q9SyjKMHukM2MxSduhzh-3DoiNx8cFAZOmKLvzlPVDNB5ZZVWDBqP5fV-zw8inEoP0f0gbdg4kQu5BQyH7t0DJY3I" alt="悦悦头像">
+      <div class="info">
+        <div class="label">孩子头像 — 悦悦</div>
+        <div class="usage"><span class="badge badge-page">ChildProfile</span> 孩子卡片2头像</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AddressList 服务地址 -->
+<div class="section">
+  <h2>AddressList 服务地址页</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD68TZPNI6epxi0jU3MH2tEBVrx84j6o76wGV4w-NqRb-lzrfS12t5wVnUHSeD4mo1CeL9Z-qvRzD4jtdZyB9KsuiFQhtqSTyo2w4MywqUC5wDn3M31ydZx-XTadEcArIwB9hmLUFOTCaiO2zYFxdcmkhKu9FsfEc3KfcRSiunKxxCocIi7FQX8vR6zmWp8T2c4J3DiFCgYUA4pYHtY3LvvJBHpSyHJD4482rKmfPqChPclRil_7i1Igxz7If52a35v0VHmk-eleKs" alt="地图预览 - 学校">
+      <div class="info">
+        <div class="label">地图预览 — XX 小学</div>
+        <div class="usage"><span class="badge badge-page">AddressList</span> 地址卡片1地图底图</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD_UPLHO6-JPascFDodfWO0Ika-fu-mMHje6YG1KJWuUQ0IBnjn6jRtnSNZruibZ3FFOyzKUGf_-QRv7HD6ek-CfwSLjFE2hIMp-2bbuSKabCpGYJDE8cMXsMJYWwE4xTQkDe9hN1zSRFT0L-WHzO5fa_3S0XDDKUhTimB5JVgx_URUqBCIsiVaV9VUC-rQXsYHNdnqgx2XGBaGexZFBFfFoNTDKAiu2MjHW-VKPrAaoeb9H32IUTT6QEG_znePxqdZAE5QP4RAEc" alt="地图预览 - 家">
+      <div class="info">
+        <div class="label">地图预览 — 家</div>
+        <div class="usage"><span class="badge badge-page">AddressList</span> 地址卡片2地图底图</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Onboard 引导流程 -->
+<div class="section">
+  <h2>Onboard 引导流程（1-3）</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFTAvQFnqgj2p4ccoJtejm9ROnInVmiy8SmM_g2Q1f_vsiZzzyTfS5uabfaXUbwbYnrQp1QUYifCQDfYXCT6H3kU13vJ-I2m5rubkbTpLUtNdJBqZSeGeuqMr_uoeNuy18eumnEZ-QODOMLoCHSIDFkzuPKloaG2N-GnWjQYHc-1mKd6i-piSbuVtb6AObhV-UTToICUhWxeA6gbjI2WMWbhwZow4FE-CA0j4UGEHRyoDB0J2BTIualgl29xNaA3XBJofUScaKZq8" alt="温暖晨光 - 孩子牵手">
+      <div class="info">
+        <div class="label">温暖晨光 — 孩子牵手成人</div>
+        <div class="usage"><span class="badge badge-page">Onboard1</span> 全屏背景图 · <span class="badge badge-page">V4BrandScreen</span> extraBg 叠层</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRjd8rqZPQ0QkCkr8ydCtCSMU0qn15FzaFZ3nfpvca8Ys8AOw6oYlfvDDRmBnrOHoAcU1GiICGW3BsSy7TL9hMiIprkRbxLhVZxhkD-A2kC-nx_KipmpI3nFVCsOZG39J2s4lp6vm8ahzWCPBCRiVp2wqyGv0k7Bkjq-IHK3FlkTaIieYPDEytxnku-WNNKGTwiZD0s344BVjfXlzfBLTsxhnXtX43n6QCKo--rqifeGeIEJqVZ5jfwxNTOg5jk4z-zfT4PjmlEts" alt="温暖支持氛围">
+      <div class="info">
+        <div class="label">温暖支持氛围 — 装饰插图</div>
+        <div class="usage"><span class="badge badge-page">Onboard2</span> 底部装饰圆形插图</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4jGsi5coc0i9K2fTYb3Vh2yWH9-RLMWdvTwMQCOos0x0CgrcNpWwnuzqekXHS9bo6-b9dTa_ubG-uSwcL8Rp2CviIZnRSk1ZmzAf1ufjDQYF2hMdv-H6Dlyr02hOkeHRzeK2wzxEmu-v6RpJ0Xfspb0vjDHwij2MhkpGcsk-HDXPM-ZRcYaioI6ute2iK2eXc7mshIxe6RKIUG7PnMkLjLj7qI51xNiD09QZLmMLdoG9vcmGFnZW2NrnW5Qe9JfluV6qSagz2yd4" alt="地图界面">
+      <div class="info">
+        <div class="label">地图界面 — 定位标记</div>
+        <div class="usage"><span class="badge badge-page">Onboard3</span> 地图区域底图</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--              V4 家长端                      -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="version-header v4">🟣 V4 家长端</div>
+
+<div class="section">
+  <h2>主题壁纸（本地）</h2>
+  <div class="grid">
+    <div class="card local">
+      <img src="/bg1.png" alt="米家同行">
+      <div class="info">
+        <div class="label">🤝 米家同行（默认主题）</div>
+        <div class="usage">壁纸主页 + 所有子页面背景</div>
+        <div class="url">/bg1.png</div>
+      </div>
+    </div>
+    <div class="card local">
+      <img src="/tree.webp" alt="森林蝉音">
+      <div class="info">
+        <div class="label">🌲 森林蝉音</div>
+        <div class="usage">壁纸主页 + 所有子页面背景</div>
+        <div class="url">/tree.webp</div>
+      </div>
+    </div>
+    <div class="card local">
+      <img src="/sea.webp" alt="海岸潮生">
+      <div class="info">
+        <div class="label">🌊 海岸潮生</div>
+        <div class="usage">壁纸主页 + 所有子页面背景</div>
+        <div class="url">/sea.webp</div>
+      </div>
+    </div>
+    <div class="card local">
+      <img src="/room.webp" alt="暖室悠扬">
+      <div class="info">
+        <div class="label">🏠 暖室悠扬</div>
+        <div class="usage">壁纸主页 + 所有子页面背景</div>
+        <div class="url">/room.webp</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>品牌首屏</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFTAvQFnqgj2p4ccoJtejm9ROnInVmiy8SmM_g2Q1f_vsiZzzyTfS5uabfaXUbwbYnrQp1QUYifCQDfYXCT6H3kU13vJ-I2m5rubkbTpLUtNdJBqZSeGeuqMr_uoeNuy18eumnEZ-QODOMLoCHSIDFkzuPKloaG2N-GnWjQYHc-1mKd6i-piSbuVtb6AObhV-UTToICUhWxeA6gbjI2WMWbhwZow4FE-CA0j4UGEHRyoDB0J2BTIualgl29xNaA3XBJofUScaKZq8" alt="品牌首屏">
+      <div class="info">
+        <div class="label">品牌首屏 Hero 图</div>
+        <div class="usage">V4BrandScreen — extraBg 叠层（与 V3 Onboard1 共用）</div>
+        <div class="url">Google AIDA (lh3.googleusercontent.com/aida-p...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>机构相关</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="康复中心环境">
+      <div class="info">
+        <div class="label">康复中心环境</div>
+        <div class="usage">V4Recommend / V4OrgList / V4OrgDetail — 机构封面图</div>
+        <div class="url">unsplash photo-1580582932707</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>服务记录</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=160&q=80" alt="课堂照片1">
+      <div class="info">
+        <div class="label">课堂照片 1</div>
+        <div class="usage">V4ServiceDetail — 今日记录附件</div>
+        <div class="url">unsplash photo-1503676260728</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=160&q=80" alt="课堂照片2">
+      <div class="info">
+        <div class="label">课堂照片 2</div>
+        <div class="usage">V4ServiceDetail — 今日记录附件</div>
+        <div class="url">unsplash photo-1544776193</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--              汇总统计                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="version-header" style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); color: #166534;">📊 汇总统计</div>
+
+<div class="section">
+  <table class="summary-table">
+    <tr>
+      <td class="label-col">V3 家长端 · 远程图片</td>
+      <td class="value-col">30 张（去重后，全部为 Google AIDA）</td>
+    </tr>
+    <tr>
+      <td class="label-col">V3 涉及页面</td>
+      <td class="value-col">12 个页面（OrgList / OrgDetail / ProductDetail / TeacherDetail / ServiceReport / Profile / ChildProfile / AddressList / Onboard1 / Onboard2 / Onboard3 / Square）</td>
+    </tr>
+    <tr>
+      <td class="label-col">V3 无图片页面</td>
+      <td class="value-col">2 个（RoleSelect / Schedule）</td>
+    </tr>
+    <tr style="border-bottom: 2px solid #ddd;">
+      <td class="label-col">V3 跨版本共用</td>
+      <td class="value-col">1 张（Onboard1 背景 = V4 BrandScreen Hero）</td>
+    </tr>
+    <tr>
+      <td class="label-col">V4 家长端 · 本地图片</td>
+      <td class="value-col">4 张（壁纸主题）</td>
+    </tr>
+    <tr>
+      <td class="label-col">V4 家长端 · 远程图片</td>
+      <td class="value-col">4 张（品牌 Hero + 机构封面 + 2张课堂照片）</td>
+    </tr>
+    <tr style="border-bottom: 2px solid #ddd;">
+      <td class="label-col">V4 小计</td>
+      <td class="value-col">8 张</td>
+    </tr>
+    <tr class="total-row">
+      <td class="label-col">总计（去重）</td>
+      <td class="value-col">37 张（V3: 30 + V4: 8 − 共用: 1 = 37 张独立图片）</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>

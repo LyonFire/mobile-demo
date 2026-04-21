@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V4 文字样式审计</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a1a; color: #fff; padding: 24px; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 24px; margin-bottom: 8px; }
+.subtitle { color: #999; font-size: 14px; margin-bottom: 32px; }
+h2 { font-size: 18px; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #333; }
+h3 { font-size: 14px; color: #999; margin: 24px 0 12px; text-transform: uppercase; letter-spacing: 1px; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #2a2a2a; }
+th { color: #777; font-size: 12px; font-weight: 500; }
+td { font-size: 13px; }
+.color-swatch { display: inline-block; width: 16px; height: 16px; border-radius: 4px; vertical-align: middle; margin-right: 8px; border: 1px solid rgba(255,255,255,0.2); }
+.sample { padding: 16px 20px; border-radius: 12px; margin: 8px 0; }
+.sample-dark { background: rgba(255,255,255,0.08); }
+.sample-light { background: #FFF8F0; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-left: 8px; }
+.tag-var { background: #2563eb20; color: #60a5fa; }
+.tag-hard { background: #dc262620; color: #fca5a5; }
+.tag-ok { background: #05966920; color: #6ee7b7; }
+.tag-merge { background: #f59e0b20; color: #fcd34d; }
+.verdict { margin-top: 32px; padding: 20px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid #333; }
+.verdict h2 { margin-top: 0; border: none; padding: 0; }
+.verdict ul { padding-left: 20px; margin-top: 12px; }
+.verdict li { margin-bottom: 8px; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<h1>V4 文字样式审计报告</h1>
+<p class="subtitle">扫描 mobile-demo/src/pages/v4/ 下所有 JSX 文件，提取文字颜色和字号的使用情况</p>
+
+<h2>一、CSS 变量定义（两套体系）</h2>
+
+<h3>老用户体系（暗色 · v4Theme.js dark）</h3>
+<table>
+<tr><th>变量</th><th>色值</th><th>用途</th><th>预览</th></tr>
+<tr><td><code>--v4-text</code></td><td>#FFFFFF</td><td>标题、核心文案</td><td><span class="color-swatch" style="background:#FFFFFF"></span>#FFFFFF</td></tr>
+<tr><td><code>--v4-sub</code></td><td>#E0E0E0</td><td>副文案、正文描述</td><td><span class="color-swatch" style="background:#E0E0E0"></span>#E0E0E0</td></tr>
+<tr><td><code>--v4-aux</code></td><td>#A0A0A0</td><td>辅助文字、链接、section 标题</td><td><span class="color-swatch" style="background:#A0A0A0"></span>#A0A0A0</td></tr>
+<tr><td><code>--v4-weak</code></td><td>#707070</td><td>时间戳、标签、占位符</td><td><span class="color-swatch" style="background:#707070"></span>#707070</td></tr>
+</table>
+
+<h3>老用户体系（亮色 · v4Theme.js light）</h3>
+<table>
+<tr><th>变量</th><th>色值</th><th>用途</th><th>预览</th></tr>
+<tr><td><code>--v4-text</code></td><td>#1A1A1A</td><td>标题</td><td><span class="color-swatch" style="background:#1A1A1A"></span>#1A1A1A</td></tr>
+<tr><td><code>--v4-sub</code></td><td>#555555</td><td>副文案</td><td><span class="color-swatch" style="background:#555555"></span>#555555</td></tr>
+<tr><td><code>--v4-aux</code></td><td>#555555</td><td>辅助文字</td><td><span class="color-swatch" style="background:#555555"></span>#555555 ⚠️ 与 sub 相同</td></tr>
+<tr><td><code>--v4-weak</code></td><td>#999999</td><td>弱文字</td><td><span class="color-swatch" style="background:#999999"></span>#999999</td></tr>
+</table>
+
+<h3>新用户体系（v4LightTheme.js）</h3>
+<table>
+<tr><th>变量</th><th>色值</th><th>用途</th><th>预览</th></tr>
+<tr><td><code>--v4-text</code></td><td>#1A1A1A</td><td>标题</td><td><span class="color-swatch" style="background:#1A1A1A"></span>#1A1A1A</td></tr>
+<tr><td><code>--v4-sub</code></td><td>#555555</td><td>副文案</td><td><span class="color-swatch" style="background:#555555"></span>#555555</td></tr>
+<tr><td><code>--v4-aux</code></td><td>#777777</td><td>辅助文字</td><td><span class="color-swatch" style="background:#777777"></span>#777777</td></tr>
+<tr><td><code>--v4-weak</code></td><td>#999999</td><td>弱文字</td><td><span class="color-swatch" style="background:#999999"></span>#999999</td></tr>
+</table>
+
+<h2>二、字号使用清单</h2>
+
+<table>
+<tr><th>字号</th><th>使用场景</th><th>出现页面</th><th>频率</th></tr>
+<tr><td><code>text-[28px]</code></td><td>问候语大标题</td><td>V4Home</td><td>1</td></tr>
+<tr><td><code>text-[24px]</code></td><td>故事流标题</td><td>V4Story</td><td>1</td></tr>
+<tr><td><code>text-[22px]</code></td><td>壁纸主页卡片文案</td><td>V4Home（3种卡片）</td><td>6</td></tr>
+<tr><td><code>text-[20px]</code></td><td>推荐页标题</td><td>V4Recommend</td><td>2</td></tr>
+<tr><td><code>text-[18px]</code></td><td>机构名、服务类型标题</td><td>V4Recommend, V4ServiceDetail</td><td>2</td></tr>
+<tr><td><code>text-[16px]</code></td><td>故事正文、服务卡片标题</td><td>V4Story, V4Progress, V4OrgList</td><td>3</td></tr>
+<tr><td><code>text-[15px]</code></td><td>订单列表项标题</td><td>V4Orders</td><td>1</td></tr>
+<tr><td><code>text-[14px]</code></td><td>问候副标题、通知标题</td><td>V4Home, V4Notifications</td><td>2</td></tr>
+<tr><td><code>text-[13px]</code></td><td>壁纸主页卡片署名</td><td>V4Home</td><td>3</td></tr>
+<tr><td><code>text-[12px]</code></td><td>社会证明、进展预览标签、滑动提示</td><td>V4BrandScreen, V4Story</td><td>3</td></tr>
+<tr><td><code>text-[11px]</code></td><td>状态徽章、Demo切换、轮盘标签、时间戳、范围标签</td><td>V4Home, V4Progress, V4Notifications, V4Explore</td><td>7</td></tr>
+<tr><td><code>text-[10px]</code></td><td>轮盘图标标签、日历星期标签</td><td>V4Home, V4Progress</td><td>2</td></tr>
+<tr><td><code>text-sm</code> (14px)</td><td>正文描述、卡片内容</td><td>多个页面</td><td>高频</td></tr>
+<tr><td><code>text-xs</code> (12px)</td><td>标签、辅助信息</td><td>多个页面</td><td>高频</td></tr>
+<tr><td><code>text-lg</code> (18px)</td><td>Shell 页面标题、日历月份</td><td>V4Shell, V4Progress</td><td>中频</td></tr>
+</table>
+
+<h2>三、硬编码颜色（未走 CSS 变量）</h2>
+
+<table>
+<tr><th>颜色</th><th>位置</th><th>用途</th><th>状态</th></tr>
+<tr><td><code>text-white</code></td><td>V4Home 卡片文案</td><td>壁纸主页三种卡片的文案和署名</td><td><span class="tag tag-ok">合理</span> 壁纸主页固定暗色</td></tr>
+<tr><td><code>text-white/50</code></td><td>V4Home 翻转按钮</td><td>学习卡片背面的 sync 图标</td><td><span class="tag tag-ok">合理</span></td></tr>
+<tr><td><code>text-white</code></td><td>V4Button, V4LightButton</td><td>primary 按钮白色文字</td><td><span class="tag tag-ok">合理</span> 渐变背景上固定白字</td></tr>
+<tr><td><code>#333333</code></td><td>V4LightButton glass</td><td>浅色毛玻璃按钮深色文字</td><td><span class="tag tag-ok">合理</span> 硬编码在独立组件内</td></tr>
+<tr><td><code>#f59e0b</code></td><td>V4TeacherDetail Stars</td><td>星星填充色</td><td><span class="tag tag-ok">合理</span> 装饰色</td></tr>
+</table>
+
+<h2>四、视觉预览（暗色背景）</h2>
+
+<div class="sample sample-dark">
+<p style="font-size:28px; font-weight:bold; color:#FFFFFF; font-family:'Plus Jakarta Sans',sans-serif;">早上好 <span class="tag tag-var">28px · --v4-text</span></p>
+<p style="font-size:14px; color:#A0A0A0; margin-top:4px;">你好，小明妈妈 <span class="tag tag-var">14px · --v4-aux</span></p>
+</div>
+
+<div class="sample sample-dark" style="margin-top:12px;">
+<p style="font-size:22px; font-weight:300; color:#FFFFFF; line-height:1.7;">每一小步，都值得被看见。<span class="tag tag-hard">22px · text-white · 硬编码</span></p>
+<p style="font-size:13px; font-weight:300; color:#FFFFFF; text-align:right; margin-top:24px;">——米途 · 今日心语 <span class="tag tag-hard">13px · text-white</span></p>
+</div>
+
+<div class="sample sample-dark" style="margin-top:12px;">
+<p style="font-size:16px; font-weight:bold; color:#FFFFFF;">影子老师入校陪读 <span class="tag tag-var">16px bold · --v4-text</span></p>
+<p style="font-size:14px; color:#E0E0E0; margin-top:4px;">09:00-17:00 · 张老师 · XX小学 <span class="tag tag-var">14px(text-sm) · --v4-sub</span></p>
+<p style="font-size:11px; color:#707070; margin-top:8px;">3天前 <span class="tag tag-var">11px · --v4-weak</span></p>
+</div>
+
+<h2>五、视觉预览（浅色背景 · 新用户体系）</h2>
+
+<div class="sample sample-light">
+<p style="font-size:20px; font-weight:bold; color:#1A1A1A; font-family:'Plus Jakarta Sans',sans-serif;">为你找到了 <span class="tag tag-var">20px · --v4-text</span></p>
+<p style="font-size:14px; color:#555555; margin-top:8px;">大米和小米（朝阳店）· ⭐ 4.9 · 朝阳区 <span class="tag tag-var">14px · --v4-sub</span></p>
+<p style="font-size:12px; color:#999999; margin-top:4px;">距您 2.4km <span class="tag tag-var">12px · --v4-weak</span></p>
+</div>
+
+<div class="verdict">
+<h2>六、简化建议</h2>
+<ul>
+<li><strong>v4Theme.js light 模式的 <code>--v4-aux</code> 和 <code>--v4-sub</code> 值相同（都是 #555555）</strong><span class="tag tag-merge">可合并</span><br>
+建议：将 light 模式的 <code>--v4-aux</code> 改为 <code>#777777</code>（与 v4LightTheme.js 一致），保持四级色阶的区分度。或者如果壁纸主页已固定暗色，light 模式实际只有子页面在用，可以直接删除 light 模式（子页面已切到 V4LightShell）。</li>
+
+<li><strong><code>text-[15px]</code> 和 <code>text-[14px]</code> 只差 1px</strong><span class="tag tag-merge">可合并</span><br>
+建议：统一为 <code>text-sm</code>（14px）。V4Orders 的 15px 标题改为 14px 不会有视觉差异。</li>
+
+<li><strong><code>text-[11px]</code> 和 <code>text-[10px]</code> 只差 1px</strong><span class="tag tag-merge">可合并</span><br>
+建议：统一为 <code>text-[11px]</code>。轮盘标签和日历星期标签用 10px 太小，11px 更合理。</li>
+
+<li><strong>字号总结：可收敛为 7 级</strong><br>
+<code>28px</code>（大标题）→ <code>22px</code>（卡片文案）→ <code>18-20px</code>（页面标题/机构名）→ <code>16px</code>（正文标题）→ <code>14px/text-sm</code>（正文）→ <code>12px/text-xs</code>（辅助）→ <code>11px</code>（微标签）</li>
+
+<li><strong>壁纸主页卡片用硬编码 <code>text-white</code> 是正确的</strong><span class="tag tag-ok">无需改</span><br>
+壁纸主页已固定暗色模式，卡片文案永远在深色壁纸上，用 CSS 变量反而增加不确定性。</li>
+</ul>
+</div>
+
+</body>
+</html>
